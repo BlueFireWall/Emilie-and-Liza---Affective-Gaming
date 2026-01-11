@@ -1,17 +1,103 @@
-# 3D-Pacman
-[Itch.io](https://tornifrog.itch.io/pacman-3d)
+Emotional-Adaptive Games
 
-This game turns the known 2D Pacman game to 3D first person Pacman.
+Type: Research / Interactive Unity Games
+Unity Version: 6.2 (6000.2.6f2)
+Theme: Visual Computing – Emotion-Recognizing / Affective Gaming
 
-Controls: WASD or Arrow keys. Look around using the mouse.
+This Unity project explores emotion-adaptive gaming, where player emotions influence game mechanics in real-time. It includes two games: Tetris and 3D Pac-Man, integrated with a Python-based emotion recognition system via UDP communication.
 
-In order to win you need to collect all the coins, and dodge the ghosts.
+Overview
 
-The game contains:
-1. The player [Player](https://github.com/Tornifrog-Interactive/3D-Pacman/blob/main/Assets/Scripts/PlayerController.cs), [Player Camera](https://github.com/Tornifrog-Interactive/3D-Pacman/blob/main/Assets/Scripts/PlayerCam.cs)
-2. 244 Coins for the player to collect.
-3. 4 NPC ghosts that roam around the map randomly. [Ghosts](https://github.com/Tornifrog-Interactive/3D-Pacman/blob/main/Assets/Scripts/GhostController.cs)
-4. 2 Portals to switch sides of the map. [Portal](https://github.com/Tornifrog-Interactive/3D-Pacman/blob/main/Assets/Scripts/Portal.cs)
-5. A minimap.
+Player emotions are captured through a camera and recognized via Python.
 
-![image](https://github.com/Tornifrog-Interactive/3D-Pacman/assets/74298243/d67ea150-b0a9-48a4-81f4-25e6342f32bc)
+Emotional data is sent to Unity using UDP.
+
+Gameplay adapts dynamically based on the detected emotion:
+
+Tetris: block falling speed changes
+
+Pac-Man: ghost speed and chasing behavior changes
+
+This project demonstrates how affective computing can be used to create interactive, emotion-driven gameplay.
+
+Games & Features
+Tetris
+
+Blocks fall at variable speed depending on player emotions.
+
+Controls:
+
+Rotate Block: R
+
+Move Left/Right: Left / Right Arrow
+
+Drop Block Faster: Down Arrow
+
+Notes:
+
+No block storage available.
+
+Game difficulty adapts in real-time.
+
+3D Pac-Man
+
+Ghosts’ speed and behavior change based on player emotions.
+
+Ghosts randomly switch between chasing the player and wandering.
+
+Features:
+
+2 portals connecting different areas
+
+No power-pellets implemented
+
+Controls:
+
+Move Player: WASD
+
+Camera Control: Mouse
+
+Pause Game: P
+
+Setup Instructions
+
+Open Unity Hub and load the project folder Emotional-Adaptive Games.
+
+Run the Python emotion recognition script to start the camera and UDP server.
+
+Open the desired Unity scene:
+
+TetrisScene
+
+PacMan3DScene
+
+Play the game. Unity will receive real-time emotion data and adjust gameplay mechanics accordingly.
+
+How It Works
+
+Python script detects player emotions via the camera.
+
+Emotion data is sent to Unity via UDP.
+
+Unity scripts adjust gameplay parameters:
+
+Tetris: block speed changes
+
+Pac-Man: ghost speed and chasing behavior changes
+
+
+| Game    | Action            | Key / Control  |
+| ------- | ----------------- | -------------- |
+| Tetris  | Rotate Block      | `R`            |
+| Tetris  | Move Left/Right   | `Left / Right` |
+| Tetris  | Drop Block Faster | `Down`         |
+| Pac-Man | Move Player       | `WASD`         |
+| Pac-Man | Camera Control    | `Mouse`        |
+| Pac-Man | Pause Game        | `P`            |
+
+
+Credits
+
+Unity Development: [P310 - Emilie & Liza - Emotional-adaptive Games]
+
+Research: Affective Computing & Visual Computing
