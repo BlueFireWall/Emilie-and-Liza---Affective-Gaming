@@ -9,6 +9,8 @@ TagManager:
   - Portal
   - PlayerModel
   - PowerPellet
+  - Cube
+  - TitleScreen
   layers:
   - Default
   - TransparentFX

@@ -1,15 +1,15 @@
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement; // For quitting or loading scenes
+using UnityEngine.SceneManagement;
 
 public class PauseGame : MonoBehaviour
 {
-    public GameObject pauseMenuUI; // Assign a Canvas with 2 buttons in Inspector
+    public GameObject pauseMenuUI;
     private bool isPaused = false;
 
     void Start()
     {
-        pauseMenuUI.SetActive(false); // Hide pause menu at start
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f; // Safety reset
     }
 
     void Update()
@@ -25,37 +25,32 @@ public class PauseGame : MonoBehaviour
 
     void Pause()
     {
-        Time.timeScale = 0f; // Freeze the game
+        Time.timeScale = 0f;
         isPaused = true;
-        pauseMenuUI.SetActive(true); // Show pause menu
+        pauseMenuUI.SetActive(true);
 
-        // Unlock and show cursor so player can click buttons
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-
-        Debug.Log("Game Paused");
     }
 
     public void ResumeGame()
     {
-        Time.timeScale = 1f; // Resume game
+        Time.timeScale = 1f;
         isPaused = false;
         pauseMenuUI.SetActive(false);
 
-        // Lock and hide cursor for normal gameplay
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
-        Debug.Log("Game Resumed");
     }
 
-    public void QuitGame()
+    public void GoToTitleScreen()
     {
-        Debug.Log("Quitting Game");
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false; // Stop play mode in editor
-#else
-        Application.Quit(); // Quit build
-#endif
+        Time.timeScale = 1f; // CRITICAL: unpause before scene change
+        isPaused = false;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        SceneManager.LoadScene("GameSelection");
     }
 }

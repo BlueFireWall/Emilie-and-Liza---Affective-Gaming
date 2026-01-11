@@ -12,17 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/GameSelection.unity
     guid: d8b1bc7957282a84d827ede9abb84adb
   - enabled: 1
-    path: Assets/Scenes/Options.unity
-    guid: 4c694f9227c8ff444b98e5a4ac2a376c
-  - enabled: 1
-    path: Assets/Scenes/Credit.unity
-    guid: ca07616f92b7d484e9cf06d829f666c3
-  - enabled: 1
     path: Assets/Scenes/Pacman.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/Scenes/Soduko.unity
-    guid: 7eb24543c924aac41868e844818fc3cf
   - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: 2c185150773f6844cab561728eac4dea
