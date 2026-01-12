@@ -18229,9 +18229,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 525169424}
+      - m_Target: {fileID: 855268696}
         m_TargetAssemblyTypeName: PauseGame, Assembly-CSharp
-        m_MethodName: QuitGame
+        m_MethodName: GoToTitleScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
